@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+<!-- set title -->
+{% block title %}
+<title>Example django | About</title>
+{% endblock %}
+<!-- set content -->
+{% block content %}
+<div class="about-container">
+  <p>Example cms django {{ title }} page</p>
+  <div>
+    {% if isShow %}
+    <p>{{ "Show" | upper }}</p>
+    {% else %}
+    <p>Hide</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

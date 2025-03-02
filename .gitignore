@@ -1,0 +1,17 @@
+*.pyc
+__pycache__/
+*.sqlite3
+venv/
+env/
+.env
+*.log
+*.pot
+local_settings.py
+db.sqlite3
+node_modules/
+.idea/
+.vscode/
+*.swp
+*.swo
+*.DS_Store
+mysql_data
