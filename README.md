@@ -8,6 +8,11 @@
 - mysql
 - docker
 - tailwind flowbite cdn (cms)
+- pyjwt
+
+## extension
+
+- rest client (doc api)
 
 ## init project and app
 
@@ -53,4 +58,13 @@ $python manage.py createsuperuser
 ```
 $python manage.py migrate [app_name] zero (rollback to zero)
 $python manage.py migrate [app_name] [file_migrate_name] (rollback to last migrate)
+```
+
+## clear log admin
+
+```
+$python manage.py shell
+$from django.contrib.admin.models import LogEntry
+$LogEntry.objects.all().delete()
+$exit()
 ```

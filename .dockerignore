@@ -1,0 +1,7 @@
+*.pyc
+*.pyo
+.git
+__pycache__
+venv
+*.sqlite3
+mysql_data/

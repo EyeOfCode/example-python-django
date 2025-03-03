@@ -1,0 +1,14 @@
+@baseUrl = http://localhost:8000
+@token = none
+
+### Get Member List
+GET {{baseUrl}}/api/members/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+###
+
+### Get Member By Id
+GET {{baseUrl}}/api/members/6
+Content-Type: application/json
+Authorization: Bearer {{token}}
+###

@@ -7,5 +7,14 @@
 {% block content %}
 <div>
   <div>Content</div>
+  {% if user.is_authenticated %}
+  <div class="user-info">
+    <p>Welcome, {{ username }}</p>
+    <p>Email: {{ email }}</p>
+    {% if is_staff %}
+    <p>Admin User</p>
+    {% endif %}
+  </div>
+  {% endif %}
 </div>
 {% endblock %}
