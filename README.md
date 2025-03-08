@@ -10,10 +10,6 @@
 - tailwind flowbite cdn (cms)
 - pyjwt
 
-## extension
-
-- rest client (doc api)
-
 ## init project and app
 
 ```
