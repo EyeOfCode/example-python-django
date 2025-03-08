@@ -2,13 +2,54 @@
 @token = none
 
 ### Get Member List
-GET {{baseUrl}}/api/members/
+GET {{baseUrl}}/api/members
 Content-Type: application/json
-Authorization: Bearer {{token}}
+### 
+
+### Get Member Detail
+GET {{baseUrl}}/api/members/10
+Content-Type: application/json
+### 
+
+### Post Create Member
+POST {{baseUrl}}/api/members/create
+Content-Type: application/json
+
+{
+    "firstname": "John",
+    "lastname": "Doe",
+    "username": "test2",
+    "password": "test",
+    "phone": "08123456789",
+    "is_active": "True",
+    "role": "member",
+    "email": "test@test.com"
+}
+### 
+
+### Put Update Member
+PUT {{baseUrl}}/api/members/update/10
+Content-Type: application/json
+
+{
+    "firstname": "John",
+    "lastname": "Doe",
+    "phone": "08123456789",
+    "is_active": "True",
+    "role": "admin"
+}
 ###
 
-### Get Member By Id
-GET {{baseUrl}}/api/members/6
+### Patch Update Member
+PATCH {{baseUrl}}/api/members/update/10
 Content-Type: application/json
-Authorization: Bearer {{token}}
+
+{
+    "password": "test"
+}
 ###
+
+### Delete Remove Member
+DELETE {{baseUrl}}/api/members/delete/10
+Content-Type: application/json
+### 

@@ -19,8 +19,6 @@ class Member(models.Model):
         ordering = ['-createdAt']
 
     def save(self, *args, **kwargs):
-        if self._state.adding or self.password.startswith('pbkdf2_sha256$'):
-            self.password = make_password(self.password)
         super().save(*args, **kwargs)
 
     def check_password(self, raw_password):
