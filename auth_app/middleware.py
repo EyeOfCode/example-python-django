@@ -10,8 +10,8 @@ class JWTAuthenticationMiddleware(MiddlewareMixin):
             member_id = verify_jwt_token(token)
             if member_id:
                 try:
-                    member = Member.objects.get(id=member_id)
+                    member = Member.objects.get(id=member_id, is_active=True)
                     request.user = member
                 except Member.DoesNotExist:
                     pass
-        return None
+        pass

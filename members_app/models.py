@@ -19,6 +19,8 @@ class Member(models.Model):
         ordering = ['-createdAt']
 
     def save(self, *args, **kwargs):
+        if self._state.adding:
+            self.password = make_password(self.password)
         super().save(*args, **kwargs)
 
     def check_password(self, raw_password):

@@ -10,8 +10,6 @@ from .serializers import MemberSerializer
 def MemberCreate(request):
     serializer = MemberSerializer(data=request.data)
     if serializer.is_valid():
-        if request.data.get('password'):
-            serializer.validated_data['password'] = make_password(request.data.get('password'))
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
