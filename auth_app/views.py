@@ -29,7 +29,7 @@ def Register(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
-@member_login_required
+@member_login_required()
 def GetMembers(request):
     member = request.user
     serializer = MemberSerializer(member)

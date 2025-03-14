@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from auth_app.decorators import member_login_required, member_role_required
+from auth_app.decorators import member_login_required
 from .models import Member
 from .serializers import MemberSerializer
 
@@ -38,15 +38,14 @@ def MemberDelete(request, id):
     return Response({'message': 'Member deleted'}, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-@member_login_required
-@member_role_required(required_roles=['admin'])
+@member_login_required(required_roles=['admin'])
 def MemberList(request):
     data = Member.objects.all()
     serializer = MemberSerializer(data, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
-@member_login_required
+@member_login_required()
 def MemberDetail(request, id):
     try:
         data = Member.objects.get(id=id)
